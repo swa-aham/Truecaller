@@ -1,0 +1,60 @@
+Coding Task
+
+Create a REST API to be consumed by a mobile app, which is somewhat similar to various popular apps that tell you if a number is spam or allow you to find a person’s name by searching for their phone number.
+
+You can use whichever language/framework you're most comfortable in. However, we give strong preference to candidates in the pipeline who’ve done it using Django, and to a lesser extent Flask or Rails. For persistence, you need to use a relational database along with an ORM for your framework. We will not evaluate NoSQL or raw SQL queries.
+
+Terminology and Assumptions:
+Registered Users and Contacts: Each registered user of the app can have zero or more personal “contacts.”
+Global Database: The “global database” is basically the combination of all the registered users and their personal contacts (who may or may not be registered users).
+UI Development: The UI will be built by someone else—you are simply making the REST API endpoints to be consumed by the frontend.
+Production Ready: Write the code as if it’s for production use, incorporating required performance and security measures. You should use only a web server (development server is fine) and a database. Do not use other servers.
+Data to be Stored for Each User:
+Name
+Phone Number
+Email Address
+Registration and Profile:
+A user must register with at least their name, phone number, and password before using the app. Optionally, they can add an email address.
+Only one user can register with a particular phone number.
+A user must be logged in to perform any action; there is no public access to any functionality.
+Users’ phone contacts will be automatically imported into the app’s database (you don’t need to implement importing contacts).
+Spam Reporting:
+Users can mark a number as spam, allowing others to identify spammers via the global database.
+The marked number might not belong to a registered user or contact—it could be a random number.
+Search Functionality:
+By Name:
+
+Users can search for a person by name in the global database.
+Results should display the name, phone number, and spam likelihood for each match (complete or partial).
+Matches where names start with the query should appear first, followed by matches where names contain the query.
+By Phone Number:
+
+If a registered user’s phone number matches the query, show only that result.
+Otherwise, display all entries matching the phone number completely. A phone number might have multiple names (due to contacts from different users).
+Details Display:
+
+Clicking a search result should show all details about that person along with spam likelihood.
+Email visibility depends on whether the searched person is a registered user and whether the searcher is in their contact list.
+Data Population:
+Write a script or tool to populate your database with a decent amount of random, sample data for testing.
+Evaluation Criteria:
+Completeness of functionality
+Correctness under thorough testing
+Performance and scalability of APIs
+Security of APIs
+Data modeling
+Structure of code
+Readability of code
+Offer Criteria:
+Internship: Most functionality should be present with minimal bugs.
+Full-Time Role: Submissions must excel in all evaluation criteria, depending on the candidate's experience. APIs should be production-ready, handling scenarios beyond the specified requirements.
+How to Submit:
+Reply to the email containing this task with a tar/zip file of your source code. Ensure your email reply matches the thread; otherwise, it might not be received.
+Avoid sharing code on public platforms like GitHub.
+Exclude folders like virtual environments to minimize file size.
+Include instructions for running the code.
+Next Steps:
+Replies with decisions are typically sent within a week, though delays can occur.
+Feedback will not be detailed for rejections.
+Plagiarism Policy:
+If plagiarism is detected, employment will be terminated immediately. Names and emails of plagiarizers may be publicly listed to prevent future hires.
